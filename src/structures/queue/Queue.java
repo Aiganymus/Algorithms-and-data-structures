@@ -72,7 +72,6 @@ class Queue {
 				System.out.println(queue.pop());
 			}
 			else if (qString.equals("front")) {
-				queue.front();
 				System.out.println(queue.front());
 			}
 			else if (qString.equals("clear")) {
@@ -80,11 +79,9 @@ class Queue {
 				System.out.println("ok");
 			}
 			else if (qString.equals("size")) {
-				queue.size();
 				System.out.println(queue.size());
 			}
 			else if (qString.equals("exit")) {
-				queue.size();
 				System.out.println("bye");
 				break;
 			}

@@ -61,7 +61,6 @@ class Stack {
 				System.out.println(stack.pop());
 			}
 			else if (qString.equals("back")) {
-				stack.back();
 				System.out.println(stack.back());
 			}
 			else if (qString.equals("clear")) {
@@ -73,7 +72,6 @@ class Stack {
 				System.out.println(stack.size());
 			}
 			else if (qString.equals("exit")) {
-				stack.size();
 				System.out.println("bye");
 				break;
 			}
