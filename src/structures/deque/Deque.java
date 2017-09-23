@@ -2,17 +2,17 @@ package structures.deque;
 
 import java.util.Scanner;
 
-class Node {
-	int value;
-	Node next = null;
-	Node prev = null;
-	
-	public Node(int value) {
-		this.value = value;
-	}
-}
-
 class Deque {
+	class Node {
+		int value;
+		Node next = null;
+		Node prev = null;
+		
+		public Node(int value) {
+			this.value = value;
+		}
+	}
+	
 	int size = 0;
 	Node first = null;
 	Node last = null;
@@ -21,8 +21,7 @@ class Deque {
 	public void push_front(int value) {
 		Node node = new Node(value);
 		if (first == null) {
-			first = node;
-			first.next = last;
+			first = last = node;
 		}
 		else {
 			node.next = first;
@@ -34,9 +33,8 @@ class Deque {
 	
 	public void push_back(int value) {
 		Node node = new Node(value);
-		if (last == null) {
-			last = node;
-			last.prev = first;
+		if (first == null) {
+			last = first = node;
 		}
 		else {
 			last.next = node;
@@ -48,16 +46,24 @@ class Deque {
 	
 	public int pop_front() {
 		value = first.value;
-		first = first.next;
-		first.prev = null;
+		if (first.next != null) {
+			first = first.next;
+			first.prev = null;
+		} else {
+			first = last = null;
+		}
 		size--;
 		return value;
 	}
 	
 	public int pop_back() {
 		value = last.value;
-		last = last.prev;
-		last.next = null;
+		if (last.prev != null) {
+			last = last.prev;
+			last.next = null;
+		} else {
+			last = first = null;
+		}
 		size--;
 		return value;
 	}

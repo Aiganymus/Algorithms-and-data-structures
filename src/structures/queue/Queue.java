@@ -2,16 +2,16 @@ package structures.queue;
 
 import java.util.Scanner;
 
-class Node {
-	int value;
-	Node next = null;
-	
-	public Node(int value) {
-		this.value = value;
-	}
-}
-
 class Queue {
+	class Node {
+		int value;
+		Node next = null;
+		
+		public Node(int value) {
+			this.value = value;
+		}
+	}
+	
 	int size = 0;
 	Node first = null;
 	Node last = null;

@@ -2,16 +2,16 @@ package structures.stack;
 
 import java.util.Scanner;
 
-class Node {
-	int value;
-	Node prev = null;
-	
-	public Node(int value) {
-		this.value = value;
-	}
-}
-
 class Stack {
+	class Node {
+		int value;
+		Node prev = null;
+		
+		public Node(int value) {
+			this.value = value;
+		}
+	}
+	
 	int size = 0;
 	Node top = null;	
 	
@@ -68,7 +68,6 @@ class Stack {
 				System.out.println("ok");
 			}
 			else if (qString.equals("size")) {
-				stack.size();
 				System.out.println(stack.size());
 			}
 			else if (qString.equals("exit")) {
