@@ -1,4 +1,4 @@
-//package sis.brackets;
+package sis.brackets;
 
 import java.util.Scanner;
 
@@ -49,16 +49,17 @@ class Brackets {
 			if(c == '(' || c == '{' || c == '[') {
 				stack.push(c);
 			} 
+			
 			else if(!stack.empty()) {
 				if ((c == ')' && stack.back() == '(') ||
 					(c == '}' && stack.back() == '{') ||
 					(c == ']'&& stack.back() == '[')) {
 					stack.pop();
-				}
+				} 
+				else return false;
 			} 
-			else {
-				return false;
-			}
+			
+			else return false;
 		}
 		return stack.empty();
 	}
