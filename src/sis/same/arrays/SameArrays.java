@@ -1,4 +1,4 @@
-//package sis.same.arrays;
+package sis.same.arrays;
 
 import java.util.Scanner;
 

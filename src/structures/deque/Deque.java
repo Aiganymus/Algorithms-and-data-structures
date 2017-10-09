@@ -81,8 +81,7 @@ class Deque {
 	}
 	
 	public void clear() {
-		first = null;
-		last = null;
+		first = last = null;
 		size = 0;
 	}
 
